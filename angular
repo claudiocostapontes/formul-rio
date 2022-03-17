@@ -1,0 +1,137 @@
+<!DOCTYPEhtml >
+< html  lang =" pt-BR " >
+
+< cabeça >
+    < meta  charset =" UTF-8 " >
+    < meta  name =" viewport " content =" largura=largura do dispositivo, escala inicial=1.0 " >
+    < meta  nome =" descrição " conteúdo ="" >
+    < meta  nome =" autor " conteúdo ="" >
+    < title > Formulario Angular JS </ title >
+
+    < script  type =" text/javascript " src =" js/angular-1.6.1/angular.js " > </ script >
+    < script  type =" text/javascript " src =" js/angular-1.6.1/i18n/angular-locale_pt-br.js " > </ script >
+
+    < link  rel =" ícone de atalho " href ="" >
+    < link  rel =" folha de estilo " href =" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css " >
+    < link  rel =" folha de estilo " href =" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css " >
+    < estilo >
+        corpo {
+            padding-top :  50 px ;
+        }
+
+        . modelo inicial {
+            preenchimento :  40px 15px  ; _ _
+            text-align : centro;
+        }
+    </ estilo >
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</ cabeça >
+
+< corpo >
+    < nav  class =" navbar navbar-inverse navbar-fixed-top " role =" navegação " >
+        < classe div  =" contêiner " >
+            < div  class =" navbar-header " >
+                < tipo de botão  =" botão " class =" navbar-toggle " data-toggle =" recolher " data-target =" .navbar-collapse " >
+                    < span  class =" sr-only " > Alternar navegação </ span >
+                    < span  class =" icon-bar " > </ span >
+                    < span  class =" icon-bar " > </ span >
+                    < span  class =" icon-bar " > </ span >
+                </ botão >
+                < a  class =" navbar-brand " href =" # " > Nome do projeto </ a >
+            </ div >
+
+            < div  class =" recolher navbar-collapse " >
+                < ul  class =" nav navbar-nav " >
+                    < li  class =" active " > < a  href =" # " > Home </ a > </ li >
+                    < li > < a  href =" #about " > Sobre </ a > </ li >
+                    < li > < a  href =" #contact " > Contato </ a > </ li >
+                </ ul >
+            </ div >
+            <!--.nav-collapse -->
+        </ div >
+    </ nav >
+
+    < div  class =" container " ng-app =" formApp " >
+        < div  class =" modelo inicial " >
+            < classe div  =" linha " >
+                < form  class =" form-horizontal " ng-controller =" cadastroCtrl " >
+                    < conjunto de campos >
+
+                        <!-- Nome do formulário -->
+                        < legenda > Verificar Usuário </ legenda >
+
+                        <!-- Entrada de texto-->
+                        <!-- <div class="form-group">
+                            <label class="col-md-4 control-label" for="nome">Nome</label>
+                            <div class="col-md-6">
+                                <input id="nome" name="nome" type="text" placeholder="Digite seu nome" ng-model="nome" class="form-control input-md" required="">
+                                <br>{{nome}}
+                            </div>
+                        </div> -->
+
+                        <!-- Entrada de texto-->
+                        < div  class =" form-group " >
+                            < label  class =" col-md-4 control-label " for =" email " > E-mail: </ label >
+                            < div  class =" col-md-8 " >
+                                < input  id =" email " name =" email " type =" email " placeholder =" Digite um e-mail válido " class =" form-control input-md " ng-model =" email " obrigatório ="" >
+
+                            </ div >
+                        </ div >
+
+                        <!-- Entrada de senha-->
+                        < div  class =" form-group " >
+                            < label  class =" col-md-4 control-label " for =" senha " > Senha: </ label >
+                            < div  class =" col-md-4 " >
+                                < input  id =" senha " name =" senha " type =" password " placeholder ="" ng-model =" senha " class =" form-control input-md " required ="" >
+                            </ div >
+                        </ div >
+
+                        <!-- Botão -->
+                        < div  class =" form-group " >
+                            < label  class =" col-md-4 control-label " for =" salvar " > </ label >
+                            < div  class =" col-md-4 " >
+                                < button  id =" salvar " name =" salvar " class =" btn btn-success "
+                                ng-click =" verificarUsuario() " > botão Verificar </ >
+                            </ div >
+                        </ div >
+                    </ fieldset >
+                </ formulário >
+            </ div >
+        </ div >
+    </ div >
+
+    < script  src =" https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js " > </ script >
+
+    < script  src =" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " > </ script >
+
+    < script  src =" https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js " >
+    </ script >
+
+    < tipo de script  =" texto/javascript " >
+        var  app  =  angular . module ( 'formApp' , [ ] ) ;
+        aplicativo . controller ( "cadastroCtrl" ,  function ( $scope ) {
+           var  objetoUsuario  =  {  nome : "Fernanda" , 
+                                 e- mail : "fernanda@gmail.com" , 
+                                 senha : "camaro123"
+                               } ;
+
+           $escopo . verificarUsuario  =  function ( ) {
+               if ( $scope . email  ==  objectUsuario . email 
+                  &&  $ escopo . senha  ==  objetoUsuario . senha ) {
+                   caixa de inicialização . alert ( "Usuário e senha corretos!" ) ;
+               } senão {
+                   caixa de inicialização . alert ( "Usuário ou senhas incorretas!" ) ;
+               }
+
+           } ;
+
+
+        } ) ;
+    </ script >
+</ corpo >
+
+</ html > 
